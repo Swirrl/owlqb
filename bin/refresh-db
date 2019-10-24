@@ -1,0 +1,4 @@
+#!/bin/bash
+
+stardog query execute owlqb "drop all"
+stardog data add owlqb owlqb.ttl

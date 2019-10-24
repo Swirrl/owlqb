@@ -1,0 +1,138 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix : <http://example.org/v/> .
+
+# obs example
+
+:Male owl:equivalentClass [
+        a owl:Restriction ;
+        owl:onProperty :gender;
+        owl:hasValue :male] .
+
+:Female owl:equivalentClass [
+        a owl:Restriction ;
+        owl:onProperty :gender;
+        owl:hasValue :female] .
+
+:GenderAll owl:equivalentClass [
+           a owl:Restriction ;
+           owl:onProperty :gender;
+           owl:hasValue :gender-all] .
+
+
+# :GenderAll owl:equivalentClass [
+#            a owl:Restriction ;
+#            owl:onProperty :gender;
+#            owl:hasValue :gender-all] .
+
+# :Measure owl:disjointUnionOf (:Count :Ratio) .
+
+# :UnitOfMeasure owl:disjointUnionOf (:Mothers :Fathers :PoundsGBP) .
+
+# :Mothers rdfs:subClassOf :People .
+# :Fathers rdfs:subClassOf :People .
+
+# :LSOA2011 owl:disjointUnionOf (:E10000002 :E01031349 :E01031350 :L1 :L4) .
+
+# :LSOA2001 owl:disjointUnionOf (:E10000001 :E10000002 :L1 :L2 :L3) .
+
+# :InLiverpool owl:disjointUnionOf (:L1 :L2 :L3 :L4) .
+
+:Gender a rdfs:Class .
+
+:AnyGender owl:disjointUnionOf (:Male :Female) ;
+           rdfs:subClassOf :Gender .
+
+:GenderAll owl:disjointWith :AnyGender ;
+           rdfs:subClassOf :Gender, :Aggregate .
+
+:Liverpool owl:disjointUnionOf (:Ward1 :Ward2) .
+
+:Ward1 owl:disjointUnionOf (:LSOA1A :LSOA1B ) .
+:Ward2 owl:disjointUnionOf (:LSOA2A :LSOA2B ) .
+
+
+:LSOA1A owl:equivalentClass [
+        a owl:Restriction;
+        owl:onProperty :refArea;
+        owl:hasValue :lsoa1A ] .
+
+:LSOA1B owl:equivalentClass [
+        a owl:Restriction;
+        owl:onProperty :refArea;
+        owl:hasValue :lsoa1B ] .
+
+:LSOA2A owl:equivalentClass [
+        a owl:Restriction;
+        owl:onProperty :refArea;
+        owl:hasValue :lsoa2A ] .
+
+:LSOA2B owl:equivalentClass [
+        a owl:Restriction;
+        owl:onProperty :refArea;
+        owl:hasValue :lsoa2B ] .
+
+
+:obs-1am a :Observation ;
+    :refArea :lsoa1A ;
+    :gender :male ;
+    :count 10 .
+
+:obs-1af a :Observation ;
+    :refArea :lsoa1A ;
+    :gender :female ;
+    :count 5 .
+
+:obs-1bm a :Observation ;
+    :refArea :lsoa1B ;
+    :gender :male ;
+    :count 20 .
+
+:obs-1bf a :Observation ;
+    :refArea :lsoa1B ;
+    :gender :male ;
+    :count 3 .
+
+:obs-2am a :Observation ;
+    :refArea :lsoa2A ;
+    :gender :male ;
+    :count 30 .
+
+:obs-2af a :Observation ;
+    :refArea :lsoa2A ;
+    :gender :male ;
+    :count 38 .
+
+
+:obs-2bm a :Observation ;
+    :refArea :lsoa2B ;
+    :gender :male ;
+    :count 25 .
+
+:obs-2bf a :Observation ;
+    :refArea :lsoa2B ;
+    :gender :female ;
+    :count 25 .
+
+
+:Male rdfs:subClassOf :People .
+:Female rdfs:subClassOf :People .
+
+
+# :obs-1 a :Observation ;
+#        :refArea :liverpool ;
+#        :count 10 ;
+#        :gender :male .
+
+# :obs-2 a :Observation ;
+#     :refArea :liverpool ;
+#     :count 20 ;
+#     :gender :gender-all .
+
+# :obs-3 a :Observation ;
+#     :refArea :liverpool ;
+#     :count 10 ;
+#     :gender :female .
+
+
+## Restrictions p183

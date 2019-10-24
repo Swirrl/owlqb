@@ -1,0 +1,24 @@
+#!/bin/bash
+#
+# An example .env file.  You can use this with direnv to set/change
+# these environment variables when you change project.
+#
+# https://direnv.net/
+#
+
+#export STARDOG_VERSION=stardog-6.1.2
+
+export STARDOG_PACKAGE_DIR=~/repos/muttnik/.omni_cache/install/stardog/install/
+
+set -o allexport
+
+# This will import STARDOG_HOME from the omni settings
+if [ -f "$STARDOG_PACKAGE_DIR/settings.env" ]; then
+    source $STARDOG_PACKAGE_DIR/settings.env
+fi
+
+export STARDOG_INSTALL=$STARDOG_PACKAGE_DIR/stardog
+
+
+## Put stardog on the path
+export PATH=./bin:$STARDOG_INSTALL/bin:$STARDOG_PACKAGE_DIR:$PATH

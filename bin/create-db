@@ -1,0 +1,4 @@
+#!/bin/bash
+
+
+stardog-admin db create -c database.properties -n owlqb owlqb.ttl
