@@ -101,18 +101,18 @@ There are some unexpected gotchas with OWL I ran into:
    Which means that you can't write meta-queries to find MECE children
    like this with reasoning on:
 
-   ```sparql
+```sparql
    select ?class where {
 
     :Ward1 owl:disjointUnionOf ?disj .
 
     ?disj rdf:rest*/rdf:first ?class  .
    }
-   ```
+```
 
    Instead you need to write something more baroque like:
 
-   ```sparql
+```sparql
 prefix : <http://example.org/v/>
 prefix skvoc: <http://example.org/skos-vocab-term/>
 prefix sp: <tag:stardog:api:property:>
