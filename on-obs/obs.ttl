@@ -1,0 +1,46 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix : <http://example.org/v/> .
+
+# Observations
+
+:obs-1am a :Observation ;
+    :refArea :lsoa1A ;
+    :gender :male ;
+    :count 10 .
+
+:obs-1af a :Observation ;
+    :refArea :lsoa1A ;
+    :gender :female ;
+    :count 5 .
+
+:obs-1bm a :Observation ;
+    :refArea :lsoa1B ;
+    :gender :male ;
+    :count 20 .
+
+:obs-1bf a :Observation ;
+    :refArea :lsoa1B ;
+    :gender :male ;
+    :count 3 .
+
+:obs-2am a :Observation ;
+    :refArea :lsoa2A ;
+    :gender :male ;
+    :count 30 .
+
+:obs-2af a :Observation ;
+    :refArea :lsoa2A ;
+    :gender :male ;
+    :count 38 .
+
+
+:obs-2bm a :Observation ;
+    :refArea :lsoa2B ;
+    :gender :male ;
+    :count 25 .
+
+:obs-2bf a :Observation ;
+    :refArea :lsoa2B ;
+    :gender :female ;
+    :count 25 .

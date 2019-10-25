@@ -1,0 +1,27 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix : <http://example.org/v/> .
+@prefix skvoc: <http://example.org/skos-vocab-term/> .
+
+# Genders
+skvoc:male a :Male .
+skvoc:female a :Female .
+skvoc:genderall a :GenderAll .
+skvoc:genderany a :GenderAny .
+
+skvoc:liverpool a :Liverpool .
+
+# LSOAs
+
+skvoc:lsoa1a a :LSOA1A .
+skvoc:lsoa1b a :LSOA1B .
+skvoc:lsoa2a a :LSOA2A .
+skvoc:lsoa2b a :LSOA2B .
+
+# Wards
+skvoc:ward1 a :Ward1 .
+skvoc:ward2 a :Ward2 .
+
+# Councils
+
+skvoc:liverpool a :Liverpool .

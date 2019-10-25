@@ -1,4 +1,5 @@
 #!/bin/bash
 
+PACKAGE=$1
 
-stardog-admin db create -c database.properties -n owlqb owlqb.ttl
+stardog-admin db create -c database.properties -n owlqb-$PACKAGE $PACKAGE/*.ttl

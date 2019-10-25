@@ -1,4 +1,6 @@
 #!/bin/bash
 
-stardog query execute owlqb "drop all"
-stardog data add owlqb owlqb.ttl
+PACKAGE=$1
+
+stardog query execute owlqb-$PACKAGE "drop all"
+stardog data add owlqb-$PACKAGE $PACKAGE/*.ttl

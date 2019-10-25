@@ -19,49 +19,6 @@ Taking this as a starting point we can explore what this means in the
 context of a data cube and how it might help us model things that
 support new features.
 
-### Converting owl individuals to classes
-
-As a datacube uses skos:Concept's to describe codes, and concepts are
-instances not classes, we first need a way to lift these individuals
-into classes.
-
-We can do this with property restrictions like so:
-
-```turtle
-:Male owl:equivalentClass [
-        a owl:Restriction ;
-        owl:onProperty :gender;
-        owl:hasValue :male] .
-```
-
-This lifts the `:male` concept into a class `:Male`, that exists on
-the domain of the `:gender` `qb:DimensionProperty`, i.e. here we
-materialise the class `:Male` on obervations that have a `:gender`
-dimension pointing to the `:male` concept.
-
-In and of itself this doesn't achieve much, it simply allows a query
-like:
-
-```sparql
-SELECT ?obs WHERE {
-   ?obs :gender :male .
-}
-```
-
-to be written as:
-
-```sparql
-SELECT ?obs WHERE {
-   ?obs a :Male .
-}
-```
-
-However it does allow us to coin a class for skos concepts.  There are
-likely many other ways we might do this.  The hope is however that
-once you have a class you can do interesting things that open up OWL
-tooling.  All observations returned from the above query are then
-observations about the :Male population.
-
 ### Trying to represent MECEness
 
 The concept of MECE (Mutually Exclusive and Collectively Exhaustive)

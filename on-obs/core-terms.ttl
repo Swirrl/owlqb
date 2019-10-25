@@ -1,0 +1,19 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix : <http://example.org/v/> .
+
+# This file contains core vocab terms, describing codes and their
+# relationships to each other.
+
+:Gender a rdfs:Class .
+
+:AnyGender owl:disjointUnionOf (:Male :Female) ;
+           rdfs:subClassOf :Gender .
+
+:GenderAll owl:disjointWith :AnyGender ;
+           rdfs:subClassOf :Gender, :Aggregate .
+
+:Liverpool owl:disjointUnionOf (:Ward1 :Ward2) .
+
+:Ward1 owl:disjointUnionOf (:LSOA1A :LSOA1B ) .
+:Ward2 owl:disjointUnionOf (:LSOA2A :LSOA2B ) .

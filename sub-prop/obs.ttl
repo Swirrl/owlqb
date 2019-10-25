@@ -1,0 +1,52 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix : <http://example.org/v/> .
+@prefix skvoc: <http://example.org/skos-vocab-term/> .
+
+:obs-1am a :Observation ;
+    :lsoa skvoc:lsoa1a ;
+    :gender skvoc:male ;
+    :count 10 .
+
+:obs-1af a :Observation ;
+    :lsoa skvoc:lsoa1a ;
+    :gender skvoc:female ;
+    :count 5 .
+
+:obs-1bm a :Observation ;
+    :lsoa skvoc:lsoa1b ;
+    :gender skvoc:male ;
+    :count 20 .
+
+:obs-1bf a :Observation ;
+    :lsoa skvoc:lsoa1b ;
+    :gender skvoc:male ;
+    :count 3 .
+
+:obs-2am a :Observation ;
+    :lsoa skvoc:lsoa2a ;
+    :gender skvoc:male ;
+    :count 30 .
+
+:obs-2af a :Observation ;
+    :lsoa skvoc:lsoa2a ;
+    :gender skvoc:male ;
+    :count 38 .
+
+:obs-2bm a :Observation ;
+    :lsoa skvoc:lsoa2b ;
+    :gender skvoc:male ;
+    :count 25 .
+
+:obs-2bf a :Observation ;
+    :lsoa skvoc:lsoa2b ;
+    :gender skvoc:female ;
+    :count 25 .
+
+
+
+
+:obs-2btotal a :Observation ;
+    :lsoa skvoc:lsoa2b ;
+    :gender skvoc:genderall ;
+    :count 25 .

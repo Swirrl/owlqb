@@ -1,0 +1,52 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix : <http://example.org/v/> .
+@prefix skvoc: <http://example.org/skos-vocab-term/> .
+@prefix qb: <http://purl.org/linked-data/cube#> .
+
+
+# This file contains core vocab terms, describing codes and their
+# relationships to each other.
+
+:Gender rdfs:subClassOf :StatisticalPopulation .
+
+# :ME and :CE might not be strictly necessary, though it seems
+# querying the meta-model for such things might not be possible, so
+# their presence may be helpful.
+:MECE owl:intersectionOf (:ME :CE) .
+
+:AnyMECEGender owl:disjointUnionOf (:Male :Female) ;
+               rdfs:subClassOf :MECE ; # marker class to identify mece superclasses
+               rdfs:subClassOf :Gender .
+
+:AnyGender owl:unionOf (:Male :Female) .
+
+:GenderAll rdfs:subClassOf :Gender, :Aggregate .
+
+:gender rdfs:subPropertyOf qb:dimension .
+
+:Liverpool owl:disjointUnionOf (:Ward1 :Ward2) ;
+           rdfs:subClassOf :StatisticalPopulation .
+
+:Ward1 owl:disjointUnionOf (:LSOA1A :LSOA1B ) ;
+       rdfs:subClassOf :StatisticalPopulation .
+
+:Ward2 owl:disjointUnionOf (:LSOA2A :LSOA2B ) ;
+       rdfs:subClassOf :StatisticalPopulation .
+
+:LSOA rdfs:subClassOf :StatisticalPopulation .
+
+:LSOA1A rdfs:subClassOf :LSOA .
+:LSOA1B rdfs:subClassOf :LSOA .
+:LSOA2A rdfs:subClassOf :LSOA .
+:LSOA2B rdfs:subClassOf :LSOA .
+
+:Ward1 rdfs:subClassOf :Ward .
+:Ward2 rdfs:subClassOf :Ward .
+
+:Liverpool rdfs:subClassOf :Council .
+
+:lsoa rdfs:subPropertyOf :refArea ;
+      rdfs:range :LSOA .
+
+:council rdfs:subPropertyOf :refArea .

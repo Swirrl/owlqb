@@ -1,0 +1,47 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix : <http://example.org/v/> .
+
+# This file contains bindings between the core vocab definitions and
+# observations.  It materialises the defined classes via property
+# restrictions onto the observations themselves.
+
+
+# Gender bindings
+
+:Male owl:equivalentClass [
+        a owl:Restriction ;
+        owl:onProperty :gender;
+        owl:hasValue :male] .
+
+:Female owl:equivalentClass [
+        a owl:Restriction ;
+        owl:onProperty :gender;
+        owl:hasValue :female] .
+
+:GenderAll owl:equivalentClass [
+           a owl:Restriction ;
+           owl:onProperty :gender;
+           owl:hasValue :gender-all] .
+
+# LSOA bindings
+
+:LSOA1A owl:equivalentClass [
+        a owl:Restriction;
+        owl:onProperty :refArea;
+        owl:hasValue :lsoa1A ] .
+
+:LSOA1B owl:equivalentClass [
+        a owl:Restriction;
+        owl:onProperty :refArea;
+        owl:hasValue :lsoa1B ] .
+
+:LSOA2A owl:equivalentClass [
+        a owl:Restriction;
+        owl:onProperty :refArea;
+        owl:hasValue :lsoa2A ] .
+
+:LSOA2B owl:equivalentClass [
+        a owl:Restriction;
+        owl:onProperty :refArea;
+        owl:hasValue :lsoa2B ] .
