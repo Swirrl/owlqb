@@ -110,7 +110,12 @@ There are some unexpected gotchas with OWL I ran into:
    }
 ```
 
-   Instead you need to write something more baroque like:
+Trying to hack around by loading the same data twice, once into the
+TBox and again into a different graph doesn't work, as stardog appears
+to strip owl predicates and classes by their URI, rather than checking
+if they're in the TBox or not.
+
+Instead you need to write something more baroque like:
 
 ```sparql
 prefix : <http://example.org/v/>
