@@ -217,3 +217,36 @@ waeth:Other owl:disjointWith scot:White ;
 
 Then a notional observation finder can join in a way it previously
 couldn't on the dimension value of Other.
+
+### Pros
+
+- Datasets can be related via common dimension-values.  e.g. `:Male`
+  and `:Female` can both subclass `:People`.  As could various
+  ethnicities etc.  Likewise other concepts such as currencies and
+  monetary values can be modelled as disjoint hierarchies from
+  `:People`.  The modelling should be richer, more granular and
+  precise than via tagging mechanisms like themes.  Though will
+  require careful UI work to represent, and help people navigate it.
+
+- The modelling can be done after the dataset is published as a
+  process of continual refinement; without republishing the dataset
+  itself.
+
+- Can be used to model MECEness (though it is not the only way, as we
+  could potentially represent this via XKOS etc).
+
+### Cons
+
+- Performance is already challenging.  Reasoning will likely need to
+  be constrained to only certain areas.
+
+- What is the relationship of reasoning to non-RDF consumers?  Non-RDF
+  users are our main audience, and if reasoning encourages a
+  proliferation of dataset specific identifiers it may be harder for
+  non-RDF users to reconcile and join datasets offline.  How can these
+  users do this job without having to learn RDF and OWL?  Do we need
+  to offer reconcilation services?  Should we perhaps compute
+  correspondence tables for them from OWL?  Or perhaps reasoning
+  should only be used for admin and data management, and that dataset
+  codes should somehow be continually reconcilled, if so what does
+  this mean?
