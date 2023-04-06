@@ -34,3 +34,12 @@ If you want to experiment with the data, you can run the command
 `refresh-db sub-prop` which will drop and reload the data for you.
 
 I used this crude workflow to develop and iterate the examples.
+
+## Related Work
+
+- [Managing Codelists and Classifications with OWL](https://docs.google.com/document/d/1n3liKicPcQwNgkok5T2WrRoFREPxBbek_t-j-TvM3E4/edit#)
+   - [Worked example](https://gss-cogs.github.io/ref_migration/alignment/)
+   - [Worked example code](https://github.com/GSS-Cogs/ref_migration)
+- [3 sector model](https://github.com/Swirrl/cogs-issues/blob/master/modelling/3-sector-model.md)
+  - [Various](https://github.com/Swirrl/cogs-issues/discussions/331) [problems](https://github.com/Swirrl/cogs-issues/discussions/332) [doing this](https://github.com/Swirrl/cogs-issues/discussions/275)
+  - An existence proof for why modelling MECEness in OWL for statistical classifications might be hard/impossible; is that Ian Horrocks [avoided doing it here](https://www.cs.ox.ac.uk/people/ian.horrocks/Publications/download/2021/GermanoSHL21.pdf)
